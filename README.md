@@ -922,11 +922,14 @@ git push origin main
 
 以下注意点
 
+- 可能な限りコードの解読を試みる
 - テキストのある `rails ...` コマンドは、すべて `bundle exec rails ...` に読み替えて実行する
-- サーバの起動には ターミナルで bin/dev を実行する
-- routes.rbを編集したタイミングで `bundle exec rails routes` コマンドを実行し、最新ルーティングを確認する
+- サーバの起動には ターミナルで `bin/dev` を実行する
+- `routes.rb` を編集したタイミングで `bundle exec rails routes` コマンドを実行し、最新ルーティングを確認する
+- `bundle exec rails db:migrate` を実行したタイミングで、ターミナルでMySQLにログインし、SQLの `describe文` でテーブルの構造を確認する
+- ブラウザ画面上で、何かの登録、更新、削除処理をした場合は、ターミナルでMySQLにログインし、SQLの `select文` でテーブルのレコードを確認する
 - deviseを使った認証に関しては、[Ruby / Rails関連 2023.09.01Rails: Deviseを徹底理解する（1）基礎編（翻訳）](https://techracho.bpsinc.jp/hachi8833/2023_09_01/133452?utm_source=chatgpt.com)などを参考にする
-- 各Chapterの終わりでは、Gitにコミットし、GitHubへpushする
+- 各Chapterの終わりでは、Gitにコミットし（コミットメッセージは 「Lesson 0Chapter 31.12まで実装完了」のような感じでいいです）、GitHubへpushする
 - 作業が一通り終わったら、ターミナルで以下のコマンドを実行
 
 ```bash
@@ -949,3 +952,5 @@ http://127.0.0.1:3000/users/sign_in
 ログインはできるが、ログインした瞬間に以下のエラー発生
 
 [![Image from Gyazo](https://i.gyazo.com/bea040b1afadb52da5779f700130e3b5.png)](https://gyazo.com/bea040b1afadb52da5779f700130e3b5)
+
+`Recordモデルがまだ存在しないので当たり前です`
