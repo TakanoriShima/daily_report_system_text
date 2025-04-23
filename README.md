@@ -953,7 +953,7 @@ http://127.0.0.1:3000/users/sign_in
 
 [![Image from Gyazo](https://i.gyazo.com/bea040b1afadb52da5779f700130e3b5.png)](https://gyazo.com/bea040b1afadb52da5779f700130e3b5)
 
-`Recordモデルがまだ存在しないので当たり前です`
+`Reportモデルがまだ存在しないので当たり前です`
 
 ## 4. おまけ
 今後の共同開発において、最初に共有のGitHubからコード一式をcloneしローカルで動かします。
@@ -966,7 +966,6 @@ mv daily_report_system daily_report_system_personal
 git clone https://github.com/[共有しているGitHubのアカウント名]/daily_report_system.git daily_report_system
 cd daily_report_system/
 yarn install
-rm Gemfile.lock 
 bundle install --path vendor/bundle
 vi vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8.7/lib/active_support/logger_thread_safe_level.rb
 # 7行目に require "logger" を追記して上書き保存
@@ -974,5 +973,7 @@ bundle exec rails -v
   Rails 7.0.8.7
 mkdir tmp/mysql
 # Githubのリポジトリ所有者から .env, 及び config/master.key ファイルを共有してもらい、cloneしたプロジェクトにコピーして配置する
+bundle exec rails db:migrate:reset
+bundle exec rails db:seed
 bin/dev
 ```
