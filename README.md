@@ -928,7 +928,7 @@ git push origin main
 - `routes.rb` を編集したタイミングで `bundle exec rails routes` コマンドを実行し、最新ルーティングを確認する
 - `bundle exec rails db:migrate` を実行したタイミングで、ターミナルでMySQLにログインし、SQLの `describe文` でテーブルの構造を確認する
 - ブラウザ画面上で、何かの登録、更新、削除処理をした場合は、ターミナルでMySQLにログインし、SQLの `select文` でテーブルのレコードを確認する
-- deviseを使った認証に関しては、[Ruby / Rails関連 2023.09.01Rails: Deviseを徹底理解する（1）基礎編（翻訳）](https://techracho.bpsinc.jp/hachi8833/2023_09_01/133452?utm_source=chatgpt.com)などを参考にする
+- deviseを使った認証に関しては、[Ruby / Rails関連 2023.09.01Rails: Deviseを徹底理解する（1）基礎編（翻訳）](https://techracho.bpsinc.jp/hachi8833/2023_09_01/133452?utm_source=chatgpt.com)などを参考にする。特に devise関係は、便利な半面ブラックボックス化していることも多いの要注意です。
 - 各Chapterの終わりでは、Gitにコミットし（コミットメッセージは 「Lesson 0 Chapter 31.12まで実装完了」のような感じでいいです）、GitHubへpushする
 - 作業が一通り終わったら、ターミナルで以下のコマンドを実行
 
