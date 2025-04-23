@@ -416,12 +416,12 @@ asdf current
 
 ```bash
 Name            Version         Source                                                  Installed
-nodejs          lts             /xxx/tech_academy/test_app/.tool-versions true
-ruby            3.2.0           /xxx/tech_academy/test_app/.tool-versions true
-yarn            1.22.22         /xxx/tech_academy/test_app/.tool-versions true
+nodejs          lts             /xxx/tech_academy/daily_report_system/.tool-versions true
+ruby            3.2.0           /xxx/tech_academy/daily_report_system/.tool-versions true
+yarn            1.22.22         /xxx/tech_academy/daily_report_system/.tool-versions true
 ```
 
-次に、ターミナルで以下を実行する。test_appディレクトリ直下に Gemfileが生成される
+次に、ターミナルで以下を実行する。daily_report_systemディレクトリ直下に Gemfileが生成される
 
 ```bash
 bundle init
