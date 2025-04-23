@@ -963,7 +963,7 @@ http://127.0.0.1:3000/users/sign_in
 ```bash
 cd ~/tech_academy/
 mv daily_report_system daily_report_system_personal
-git clone https://github.com/[共有しているリポジトリURL] daily_report_system
+git clone https://github.com/[共有しているGitHubのアカウント名]/daily_report_system.git daily_report_system
 cd daily_report_system/
 yarn install
 rm Gemfile.lock 
