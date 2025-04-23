@@ -973,5 +973,6 @@ vi vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8.7/lib/active_support/logger
 bundle exec rails -v
   Rails 7.0.8.7
 mkdir tmp/mysql
+# Githubのリポジトリ所有者から .env, 及び config/master.key ファイルを共有してもらい、cloneしたプロジェクトにコピーして配置する
 bin/dev
 ```
