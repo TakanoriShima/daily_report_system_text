@@ -890,19 +890,23 @@ app/views/layouts/application.html.erb全体を以下に変更し、上書き保
       <%= yield %>
     </div>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-      // 5秒後にフラッシュメッセージを非表示にする
-      setTimeout(function() {
-        var flashMessages = document.querySelectorAll(".alert");
-        flashMessages.forEach(function(msg) {
-          msg.style.transition = "opacity 0.5s ease-out";
-          msg.style.opacity = "0";
-          // 0.5秒後に完全に非表示にする
-          setTimeout(function() {
-            msg.style.display = "none";
-          }, 500);
-        });
-        }, 5000); // 5000ミリ秒 = 5秒
+      document.addEventListener("turbo:load", function () {
+        const flashMessages = document.querySelectorAll(".alert");
+
+        if (flashMessages.length > 0) {
+          setTimeout(function () {
+            flashMessages.forEach(function (msg) {
+              // Bootstrapと互換性あるようにフェード用クラス追加
+              msg.classList.add("fade");
+              msg.classList.remove("show");
+              
+              // 完全に消えた後で display: none;
+              setTimeout(function () {
+                msg.style.display = "none";
+              }, 500); // フェード時間に合わせて
+            });
+          }, 5000); // ← 常に5秒後に開始
+        }
       });
     </script>
   </body>
